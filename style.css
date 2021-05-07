@@ -3,7 +3,20 @@
 }
 
 /* Base Style */
-body {font-family: 'Inter', sans-serif; font-size: 16px; background: #ff286e;}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Inter', sans-serif; 
+    font-size: 16px; 
+    background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.9)), url('Immagine-sfondo-2.jpg') no-repeat center center; 
+    background-size: cover;
+    overflow: hidden;
+}
 
 a {text-decoration: none;}
 
@@ -31,15 +44,20 @@ p {line-height: 28px; color: #666; font-weight: 300;}
 {
     width: 100%;
     height: 150px;
-    background: lightgray;
+    background: white;
+    border: 5px solid #ff286e;
 }
 
 .header__img {width: 20%; height: 100%; float: left;}
 .header__img img {height: fit-content;}
 
-.header__menu {width: 60%; float: left;}
-.header__menu li {width: 30%; display: inline-block;}
-.header__menu li a {padding: 15px; display: block; color: #000;}
+.header__menu {width: 60%; float: left; display: block; margin: 0px; padding: 0px; text-align: center; height: 100%;}
+.header__menu li {width: 32.5%; display: inline-block; margin: 49px 0px;}
+.header__menu li a {padding: 15px; display: block; color: #000; font-weight: bold;}
+
+
+
+/* Container */
 
 
 /* Helpers */
