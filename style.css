@@ -42,6 +42,7 @@ p {line-height: 28px; color: #666; font-weight: 300;}
     background: white;
     border: 5px solid #ff286e;
     position: fixed;
+    top: 0;
 }
 
 .header__img {width: 20%; height: 100%; float: left;}
@@ -54,7 +55,7 @@ p {line-height: 28px; color: #666; font-weight: 300;}
 
 
 /* Containers */
-.container__Intro {width: 80%; border: 1px solid red; margin-top: 250px;}
+.container__Intro {width: 80%; border: 1px solid red; margin-top: 700px; margin: auto; position: relative;}
 .contaner__Formula {}
 .container__Trofeo {}
 
