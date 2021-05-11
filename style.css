@@ -20,7 +20,7 @@ body {
 
 a {text-decoration: none;}
 
-h1, h2, h3, h4, h5, p {padding-bottom: 30px; color: #000;}
+h1, h2, h3, h4, h5, p {padding-bottom: 30px; color: red;}
 
 p {line-height: 28px; color: #666; font-weight: 300;}
 
@@ -33,11 +33,6 @@ p {line-height: 28px; color: #666; font-weight: 300;}
 
 .button {padding: 18px 28px; background: #316bff; color: #fff; display: inline-block; border-radius: 4px;}
 
-@media (max-width: 768px)
-{
-    .big-text {font-size: 40px;}
-}
-
 
 /* Header */
 .header
@@ -46,28 +41,23 @@ p {line-height: 28px; color: #666; font-weight: 300;}
     height: 150px;
     background: white;
     border: 5px solid #ff286e;
+    position: fixed;
 }
 
 .header__img {width: 20%; height: 100%; float: left;}
-.header__img img {height: fit-content;}
+.header__img img {height: 100%; width: 100%;}
 
-.header__menu {width: 60%; float: left; display: block; margin: 0px; padding: 0px; text-align: center; height: 100%;}
+.header__menu {width: 40%; float: left; display: block; margin: 0px; padding: 0px; text-align: center; height: 100%;}
 .header__menu li {width: 32.5%; display: inline-block; margin: 49px 0px;}
 .header__menu li a {padding: 15px; display: block; color: #000; font-weight: bold;}
 
 
 
-/* Container */
+/* Containers */
+.container__Intro {width: 80%; border: 1px solid red; margin-top: 250px;}
+.contaner__Formula {}
+.container__Trofeo {}
 
 
-/* Helpers */
-.mt-1 {margin-top: 50px;}
-.mt-2 {margin-top: 100px;}
-.mt-3 {margin-top: 150px;}
-.tw {color: #fff;}
-
-@media (max-width: 768px)
-{
-    .mt-sma-0 {margin-top: 0;}
-    .mb-sma-0 {margin-bottom: 0;}
-}
+/* Footer */
+.footer {}
