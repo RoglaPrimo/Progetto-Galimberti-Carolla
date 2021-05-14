@@ -41,8 +41,9 @@ p {line-height: 28px; color: #666; font-weight: 300;}
     height: 150px;
     background: white;
     border: 5px solid #ff286e;
-    position: fixed;
+    position: fixed absolute;
     top: 0;
+    z-index: 10;
 }
 
 .header__img {width: 20%; height: 100%; float: left;}
@@ -55,9 +56,15 @@ p {line-height: 28px; color: #666; font-weight: 300;}
 
 
 /* Containers */
-.container__Intro {width: 80%; border: 1px solid red; margin-top: 700px; margin: auto; position: relative;}
-.contaner__Formula {}
-.container__Trofeo {}
+.container__Intro {width: 80%; border: 1px solid red; margin: auto; margin-top: 100px; background: #fff;}
+.container__Intro__img__text {height: 300px;}
+.container__Intro__img {float: left; width: 30%; height: 100%;}
+.container__Intro__img img {height: 100%; width: 100%;}
+.container__Intro__text {float: left; text-align: center; width: 70%; height: 100%;}
+
+.container__Formula {width: 80%; border: 1px solid red; margin: auto; margin-top: 100px; background: #fff;}
+.container__Percorso {}
+.container__Trofeo {width: 80%; border: 1px solid red; margin: auto; margin-top: 100px; background: #fff;}
 
 
 /* Footer */
