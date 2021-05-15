@@ -13,16 +13,16 @@ body {
     background-attachment: fixed;
     font-family: 'Inter', sans-serif; 
     font-size: 16px; 
-    background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.9)), url('Immagine-sfondo-2.jpg') no-repeat center center; 
+    background-color: white;
     background-size: cover;
-    overflow: hidden;
+    
 }
 
 a {text-decoration: none;}
 
-h1, h2, h3, h4, h5, p {padding-bottom: 30px; color: red;}
+h1, h2, h3, h4, h5, p {padding-bottom: 30px; color: rgb(255, 255, 255); z-index: 10;}
 
-p {line-height: 28px; color: #666; font-weight: 300;}
+p {line-height: 28px; font-weight: 300;}
 
 .big-text {font-size: 70px; font-weight: 900;}
 .med-text {font-size: 40px;}
@@ -56,15 +56,44 @@ p {line-height: 28px; color: #666; font-weight: 300;}
 
 
 /* Containers */
-.container__Intro {width: 80%; border: 1px solid red; margin: auto; margin-top: 100px; background: #fff;}
-.container__Intro__img__text {height: 300px;}
-.container__Intro__img {float: left; width: 30%; height: 100%;}
-.container__Intro__img img {height: 100%; width: 100%;}
-.container__Intro__text {float: left; text-align: center; width: 70%; height: 100%;}
+.container__Intro {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    padding:15px; 
+    background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('production ID_5151347.mp4') no-repeat center center; 
+    background-size: cover;
+    overflow: hidden;
+   display: flex;
+    height: 80vh;
+    
+}
 
-.container__Formula {width: 80%; border: 1px solid red; margin: auto; margin-top: 100px; background: #fff;}
+#video-back{
+    position:absolute;
+    bottom:0;
+    left:0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 0;
+  }
+  .container__Intro:after{
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top:0; left:0;
+    background: #000;
+    opacity: 0.4
+  }
+.container__Intro__img__text {height: 300px;z-index: 10; }
+
+.container__Intro__text {display: block;float: left; text-align: center; width: 100%; height:50px;padding: 10px;  }
+.container__Intro__text p{margin-top: 250px;}
+.container__Formula {width: 80%; border: 1px solid red; margin: auto; margin-top: 100px; }
 .container__Percorso {}
-.container__Trofeo {width: 80%; border: 1px solid red; margin: auto; margin-top: 100px; background: #fff;}
+.container__Trofeo {width: 80%; border: 1px solid red; margin: auto; margin-top: 100px; }
 
 
 /* Footer */
