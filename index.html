@@ -9,9 +9,15 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js" integrity="sha512-cA8gcgtYJ+JYqUe+j2JXl6J3jbamcMQfPe0JOmQGDescd+zqXwwgneDzniOd3k8PcO7EtTW6jA7L4Bhx03SXoA==" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-   
-   <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal().debug = true;
+    </script>
+
 </head>
 
 <body>
@@ -19,11 +25,11 @@
     <div class="header">
         <div class="header__img mobile">
             <a href="index.html"><img src="./immagini/logo.svg" alt="Problemi nella visualizzazione del logo"></a>
-        </div> 
+        </div>
         <ul class="header__menu">
-            <li><a  href="./pagine/percorso.html" class="decora">PERCORSO</a></li>
-            <li><a href="./pagine/squadre.html" class="decora"  >SQUADRE</a></li>
-            <li class="header__img ">
+            <li><a href="./pagine/percorso.html" class="decora">PERCORSO</a></li>
+            <li><a href="./pagine/squadre.html" class="decora">SQUADRE</a></li>
+            <li class="header__img">
                 <a href="index.html"><img src="./immagini/logo.svg" alt="Problemi nella visualizzazione del logo"></a>
             </li>
             <li class="cacca"><a class="decora">LE MAGLIE</a></li>
@@ -86,13 +92,10 @@
             </div>
             <div class="container__Trofeo__text ">
                 <h2 class=" nero big-text reveal">La formula</h2>
-                <p class="reveal3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sequi error nobis at, tenetur sit
-                    fugiat doloribus cum dolores vero voluptates quos ab dicta? Unde et facere numquam in deleniti?</p>
-                <p class="reveal3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sequi error nobis at, tenetur sit
-                    fugiat doloribus cum dolores vero voluptates quos ab dicta? Unde et facere numquam in deleniti?</p>
-                <p class="reveal3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sequi error nobis at, tenetur sit
-                    fugiat doloribus cum dolores vero voluptates quos ab dicta? Unde et facere numquam in deleniti?</p>
-              
+                <p class="reveal3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sequi error nobis at, tenetur sit fugiat doloribus cum dolores vero voluptates quos ab dicta? Unde et facere numquam in deleniti?</p>
+                <p class="reveal3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sequi error nobis at, tenetur sit fugiat doloribus cum dolores vero voluptates quos ab dicta? Unde et facere numquam in deleniti?</p>
+                <p class="reveal3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sequi error nobis at, tenetur sit fugiat doloribus cum dolores vero voluptates quos ab dicta? Unde et facere numquam in deleniti?</p>
+
             </div>
         </div>
     </div>
@@ -107,11 +110,11 @@
                 <h4 class="normal-text">Galimberti Andrea</h4>
                 <p class="footer__padding">1912 Giro d'Italia winner</p>
             </div>
-           
+
         </div>
 
     </div>
-  
+
 
 
 
@@ -122,50 +125,52 @@
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"
-        integrity="sha512-cA8gcgtYJ+JYqUe+j2JXl6J3jbamcMQfPe0JOmQGDescd+zqXwwgneDzniOd3k8PcO7EtTW6jA7L4Bhx03SXoA=="
-        crossorigin="anonymous"></script>
+
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
 
             /* Open Panel */
-            $(".hamburger").on('click', function () {
+            $(".hamburger").on('click', function() {
                 $(".header__menu").toggleClass("header__menu--open");
             });
 
-            $(".cacca").on('click', function () {
+            $(".cacca").on('click', function() {
                 $(".scomparsa").toggleClass("scomparsa--open");
                 console.log('ciao');
             });
 
         });
+    </script>
 
+    <script>
         ScrollReveal().reveal('.reveal', {
-             distance: '100px', 
-        duration: 1500, 
-        easing: 'cubic-bezier(.215, .61, .355, 1)', 
-        interval: 600 });
-        ScrollReveal().reveal('.reveal2', { 
-            distance: '100px', 
-        duration: 1500,
-         easing: 'cubic-bezier(.215, .61, .355, 1)',
-         origin:'left', interval: 600 });
-        ScrollReveal().reveal('.reveal3', { 
-            distance: '100px', 
-        duration: 2000,
-         easing: 'cubic-bezier(.215, .61, .355, 1)',
-        origin:'right', 
-        interval: 600 });
-        ScrollReveal().reveal('.zoom', { 
+            distance: '100px',
             duration: 1500,
-             easing: 'cubic-bezier(.215, .61, .355, 1)', 
-             interval: 200, 
-             scale: 0.65,
-              mobile: false });
-        
-     
-
+            easing: 'cubic-bezier(.215, .61, .355, 1)',
+            interval: 600
+        });
+        ScrollReveal().reveal('.reveal2', {
+            distance: '100px',
+            duration: 1500,
+            easing: 'cubic-bezier(.215, .61, .355, 1)',
+            origin: 'left',
+            interval: 600
+        });
+        ScrollReveal().reveal('.reveal3', {
+            distance: '100px',
+            duration: 2000,
+            easing: 'cubic-bezier(.215, .61, .355, 1)',
+            origin: 'right',
+            interval: 600
+        });
+        ScrollReveal().reveal('.zoom', {
+            duration: 1500,
+            easing: 'cubic-bezier(.215, .61, .355, 1)',
+            interval: 200,
+            scale: 0.65,
+            mobile: false
+        });
     </script>
 
 </body>
