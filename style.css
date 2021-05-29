@@ -5,6 +5,7 @@
 /* Base Style */
 html {
     height: 100%;
+    overflow-x: hidden;
 }
 body {
     height: 100%;
@@ -15,12 +16,13 @@ body {
     font-size: 16px; 
     background-color: white;
     background-size: cover;
-    
+    overflow-x: hidden;
+  
 }
 
 a {text-decoration: none;}
 
-h1, h2, h3, h4, h5, p {padding-bottom: 30px; color: rgb(255, 255, 255); z-index: 10;}
+h1, h2, h3, h4, h5, p { color: rgb(255, 255, 255); z-index: 10;}
 
 p {line-height: 28px; font-weight: 300;}
 
@@ -31,42 +33,167 @@ p {line-height: 28px; font-weight: 300;}
 
 .intro-text {text-transform: uppercase; font-size: 20px; font-weight: bold;}
 
-.button {padding: 18px 28px; background: #316bff; color: #fff; display: inline-block; border-radius: 4px;}
+.button {padding: 18px 28px; background: #ff286e; color: #fff; display: inline-block; border-radius: 4px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Header */
-.header
-{
-    width: 100%;
-    height: 150px;
-    background: white;
+.header{
+    width:100%;
+    display:flex;
+    position: fixed;
+    margin:0 auto;
+    top:0;
+    height:150px;
+    z-index:100;
+    padding:20px;
+    justify-content: center;
+    background-color: #fff;
     border: 5px solid #ff286e;
-    position: fixed absolute;
-    top: 0;
-    z-index: 10;
+}
+.header__menu{
+    width: 100%;
+    list-style: none;
+    margin:   auto;
+    align-items:center;
+    vertical-align:middle ;
+    padding:0px;
+    text-align: center;
+}
+.header__menu li{
+    width:15%;
+    color:black;
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+    vertical-align:middle ;
+    
+}
+.decora{
+  font-weight: bold;
+    color:black;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+  
 }
 
-.header__img {width: 20%; height: 100%; float: left;}
-.header__img img {height: 100%; width: 100%;}
+.header__menu li:last-child{
+    margin-right: 0;
+}
+.header__img {
+width:50px;
+height:120px;
 
-.header__menu {width: 40%; float: left; display: block; margin: 0px; padding: 0px; text-align: center; height: 100%;}
-.header__menu li {width: 32.5%; display: inline-block; margin: 49px 0px;}
-.header__menu li a {padding: 15px; display: block; color: #000; font-weight: bold;}
+}
+.header__img img{
+    width:100%;
+    height:100%;
+    object-fit: contain;
+}
 
+
+.decora:hover{
+    color:#ff286e ;
+    border-color:#ff286e;
+}
+/* .cacca{font-weight: bold; border-top: 3px solid white;border-bottom: 3px solid white;}
+.cacca:hover
+{
+
+    color:#ff286e ;
+    border-color:#ff286e;
+} */
+
+.mobile{
+    display: none;
+}
+
+@media(max-width:768px){
+ .header__menu
+ {
+    position: absolute; 
+    top:0;
+    background:white;
+    height: 100vh;
+    top:-110vh;
+    padding-top: 80px;
+    transition: .5s ease-in-out;
+}
+
+.mobile{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30px;
+    display: block;
+    width: 100px;
+}
+    
+.header__menu--open {top: 0;}
+
+
+
+
+}
+#rosa{
+    color:#ff286e;
+}
+
+.hamburger
+{
+    display:none;
+    
+}
+
+@media(max-width:768px){
+    .hamburger{
+    display:block;
+     width:50px;
+    height:50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right:30px;
+}
+    
+    .hamburger span{
+        display:block ;
+        background-color:#ff286e ;
+        height:10px ;
+        margin: 9px;
+        width:100%;
+    }
+   
+}
 
 
 /* Containers */
 .container__Intro {
-    text-align: center;
+   
     position: relative;
     width: 100%;
     padding:15px; 
-    background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('production ID_5151347.mp4') no-repeat center center; 
+    /* background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url() no-repeat center center;  */
     background-size: cover;
     overflow: hidden;
-   display: flex;
-    height: 80vh;
-    
+    display: flex;
+    height: 100vh;
+    z-index: 0;
+    border-bottom: 5px dashed #ff286e;
+    top:150px;
 }
 
 #video-back{
@@ -75,26 +202,936 @@ p {line-height: 28px; font-weight: 300;}
     left:0;
     min-width: 100%;
     min-height: 100%;
-    z-index: 0;
+    z-index:0;
   }
-  .container__Intro:after{
+.container__Intro::after{
     content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    display: block;
-    position: absolute;
-    top:0; left:0;
-    background: #000;
-    opacity: 0.4
-  }
-.container__Intro__img__text {height: 300px;z-index: 10; }
+    background: linear-gradient(0deg, rgb(0, 0, 0, .4) 70%, rgb(0, 0, 0, .9));
+    z-index: 5;
 
-.container__Intro__text {display: block;float: left; text-align: center; width: 100%; height:50px;padding: 10px;  }
-.container__Intro__text p{margin-top: 250px;}
-.container__Formula {width: 80%; border: 1px solid red; margin: auto; margin-top: 100px; }
-.container__Percorso {}
-.container__Trofeo {width: 80%; border: 1px solid red; margin: auto; margin-top: 100px; }
+}
+  
 
+.container__Intro__text{width:100%;align-content:center;z-index:10 ;margin-top: 250px;  }
+.container__Intro__text h2{ width:50%;  float:left; }
+.container__Intro__text p{ width:50%;z-index: 10;padding: 10px;  float:left; }
+@media(max-width:768px){
+    .container__Intro__text{ float:left; width: 100%;align-content:center;z-index:10 ;margin-top: 50px;} 
+    #video-back{
+        position:absolute;
+        bottom:0;
+        left:0;
+        min-width: 100%;
+        min-height: 100%;
+        
+      }
+      .container__Intro__text p{
+        width:90%;
+        margin:auto
+
+      }
+      .container__Intro__text h2{
+        width:90%;
+        margin:auto;
+      }
+}
+.container__Formula {align-items:center;text-align:center;width: 100%; border-top: 5px dashed #ff286e;border-bottom: 5px dashed #ff286e; margin: auto; margin-top: 100px; }
+.container__Formula h2 { color: black; width:100%;}
+.container__Formula p {color: black; }
+
+.container__Formula__text{width:100%; }
+
+.container__Formula__cerchi{
+    width:100% ;
+    text-align: center;
+    padding:1%;
+    align-items: center;
+    margin:auto;
+    height:fit-content;
+   
+}
+.container__Formula__cerchi div {
+    margin:10px;
+    align-items:center;
+    
+    float:left;
+    height:450px;
+    width:450px;
+    text-align: center;
+    
+    border: 5px dashed #ff286e;
+    border-radius: 100%;
+
+    padding:55px;
+}
+.montagne{
+    background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/passo-dello-stelvio.jpg') no-repeat center center;
+    background-size: cover; 
+
+}
+.montagne p{
+    color:#fff;
+}
+.trofeo{
+    background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/trofeo.jpg') no-repeat center center;
+    background-size: cover;  
+}
+.trofeo p{
+    color:#fff;
+}
+.venezia{
+    background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/venezia.jpg') no-repeat center center;
+    background-size: cover;  
+}
+.venezia p{
+    color:#fff;
+}
+
+@media(max-width:768px){
+    .container__Formula {align-items:center;text-align:center;width: 100%; border-top: 5px dashed #ff286e;border-bottom: 5px dashed #ff286e; margin: auto; margin-top: 100px; }
+    .container__Formula__cerchi{
+        width:100% ;
+        text-align: center;
+        padding:1%;
+        align-items: center;
+        margin:auto;
+        justify-content: center;
+    }
+    .container__Formula__cerchi div {
+      
+        align-items:center;
+        
+        height:450px;
+        width:450px;
+        text-align: center;
+        margin:auto;
+        border: 5px dashed #ff286e;
+        border-radius: 100%;
+        float: none;
+        padding:55px;
+        margin-bottom:30px ;
+    }
+}    
+.container__Trofeo {
+    margin-top: 100px ;
+    position: relative;
+    width: 100%;
+    padding:15px; 
+    
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    
+    border-top: 5px dashed #ff286e;
+    border-bottom: 5px dashed #ff286e;
+
+    }
+    .container__Trofeo__img {
+    width:60%;
+    float:left ;
+    height:80vh;
+    margin-top:15vh ;
+    margin-bottom:5vh ;
+    object-fit: cover;
+    }
+    /* .container__Trofeo__img img {
+        width:100%;
+        height:100%;
+       
+    } */
+    .container__Trofeo__text {
+        width:40%;
+        padding:20px;
+        float:left;
+    }
+    /* .container__Trofeo__text h2{
+        color: black;  
+    } */
+    .container__Trofeo__text p{
+        color: black;
+        padding-bottom:20px;
+      
+     
+    }
+    @media(max-width:768px){
+        .container__Trofeo {
+            margin-top: 100px ;
+            position: relative;
+            width: 100%;
+            padding:15px; 
+            
+            background-size: cover;
+            overflow: hidden;
+            display: flex;
+            
+            border-top: 5px dashed #ff286e;
+            border-bottom: 5px dashed #ff286e;
+           
+        
+            }
+            .container__Trofeo__img {
+            width:80%;
+            float:none;
+            height:auto;
+            display:block;
+            margin:50px auto;
+            margin-bottom:5vh ;
+            }
+            .container__Trofeo__img img{
+                height: 100%;
+                width:100%;
+            }
+            .container__Trofeo__text {
+                width:100%;
+                padding:20px;
+                float:left;
+                display:block;
+            }
+            /* .container__Trofeo__text h2{
+                color: black;  
+            } */
+            .container__Trofeo__text p{
+                color: black;
+                padding-bottom:20px;
+              
+             
+            }
+    }
+
+/* carousel */
+    .main-carousel{padding: 40px 40px;}
+
+    .carousel-cell{
+      height: 300px;
+      width: 350px;
+      margin-right: 40px;
+      
+    }
+    
+    .carousel-cell__content{
+      width: 100%;
+   
+      border-radius: 10%;
+      line-height: 350px;
+      text-align: center;
+      z-index:1;
+    }
+    .carousel-cell__content p{
+       display: block;
+        padding:20px;
+        z-index:10;
+        position: relative;
+        color:white;
+        padding-top:70%;
+    }
+    .carousel-cell__content p:hover{color: #ff286e;}
 
 /* Footer */
-.footer {}
+.footer {
+margin-top: 100px;
+height: 250px;
+background-color:#ff286e;
+padding: 30px;
+display:flex;
+
+}
+.width{
+    width:100%;
+}
+@media(max-width:768px){
+    .footer {
+        
+        margin-top: 100px;
+        height: 250px;
+        background-color:#ff286e;
+        padding: 30px;
+        display:flex;
+        
+        }
+        .width{
+            width:110%;
+        }
+}
+.footer__padding{
+padding-left:0px;
+padding-right:0px;
+}
+.grid {display: flex; max-width: 1500px; padding: 0 30px; margin: 0 auto;}
+.grid .col {width:100%;padding:30px 100px;}
+
+
+/* percorso  */
+/* percorso intro */
+
+.Percorso__Intro{
+
+height:640px;
+width:1100px;
+margin:150px auto;
+
+
+}
+.invisibile{
+    position:relative;
+}
+.Percorso__Intro img{
+    height:100%;
+    width:100%;
+
+}
+@media(max-width:768px){
+    .Percorso__Intro{
+        margin-top:150px;
+        height:auto;
+        width:auto;
+        margin:150px auto;
+        }
+}
+table{
+    width:100%;
+    text-align:center;
+    display:block;
+}
+.indice{
+    margin-bottom:20px;
+}
+.rosa{
+    color:#ff286e
+}
+table td{
+    width:16.66%;
+    padding: 5px;
+    margin:5px;
+    color:black
+}
+.video__Percorso__video{
+    position: relative;
+    width: 100%;
+    padding:15px; 
+    /* background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url() no-repeat center center;  */
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    height: 100vh;
+    z-index: 0;
+    border-bottom: 5px dashed #ff286e;
+    margin-bottom:100px;
+}
+#video-back2{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index:0;
+  }
+  .Video__Percorso {
+    text-align: center;
+  }
+  .Video__Percorso h2 {
+    color:#ff286e;
+    margin:100px;
+  }
+  @media(max-width:768px){
+    .Video__Percorso h2 {
+        color:#ff286e;
+        margin:100px;
+        margin-bottom:0px;
+      }
+  }
+  .Video__Percorso__tappa h2 {
+    color:#ff286e;
+    margin-top:200px;
+    margin-bottom:50px;
+  }
+  /* .Video__Percorso__tappa p{
+    color:black;
+    padding:0 83px;
+    margin-bottom:50px;
+
+} */
+
+.informazioni__tappa{
+    color:black;
+    padding:0 83px;
+    margin-bottom:50px;
+    display: flex;
+}
+
+.informazioni__tappa div {color: #000; width: 20%; margin: 0;}
+#difficoltà__tappa {padding-left: 100px;}
+
+.bold{
+font-weight: bold;
+}
+.Video__Percorso__tappa {
+    text-align:center;
+    margin-top: 150px;
+  }
+#tappa1{background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa1-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa2{background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa2-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa3{background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa3-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa4{background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa4-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa5{ background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)),url('./immagini/Tappa5-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa6{background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa6-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa7{background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa7-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa8{background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa8-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa9{background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa9-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa10{background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa10-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa11{background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa11-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa12{background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa12-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa13{ background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)),url('./immagini/Tappa13-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa14{background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa14-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa15{background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa15-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa16{ background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa16-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa17{ background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa17-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa18{ background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa18-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa19{background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa19-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa20{background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa20-foto.jpg') no-repeat center center; background-size: cover;}
+#tappa21{background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Tappa21-foto.jpg') no-repeat center center; background-size: cover;}
+
+
+
+/* Simbolini tappe */
+.col-2 {flex-basis: 20%;}
+.p-3 {font-size: .75rem;}
+.is-text-center {text-align: center;}
+.icon-type1
+{
+    background-image: url(./immagini/Cronometro-tappa.jpg);
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+.icon-type2
+{
+    background-image: url(./immagini/Pianura-tappa.gif);
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+.icon-type3
+{
+    background-image: url(./immagini/Collina-tappa.jpg);
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+.icon-type4
+{
+    background-image: url(./immagini/Montagna-tappa.jpg);
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+.wrapper-difficulty
+{
+    margin-top: .625rem;
+    display: flex;
+    padding: 0 72px;
+}
+
+/* .is-active
+{
+    color: #000;
+    border-bottom: 7px solid #000;
+} */
+
+.star-five {
+    margin: 5px 0;
+    position: relative;
+    display: block;
+    color: #d6d3eb;
+    width: 0px;
+    height: 0px;
+    border-right: 10px solid transparent;
+    border-bottom: 7px solid #d6d3eb;
+    border-left: 10px solid transparent;
+    transform: rotate(35deg);
+  }
+  .star-five:before {
+    border-bottom: 8px solid #d6d3eb;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -4.5px;
+    left: -6.5px;
+    display: block;
+    content: '';
+    transform: rotate(-35deg);
+  }
+  .star-five:after {
+    position: absolute;
+    display: block;
+    color: #d6d3eb;
+    top: 0.3px;
+    left: -10.5px;
+    width: 0px;
+    height: 0px;
+    border-right: 10px solid transparent;
+    border-bottom: 7px solid #d6d3eb;
+    border-left: 10px solid transparent;
+    transform: rotate(-70deg);
+    content: '';
+  }
+
+  .star-five__Nero {
+    margin: 5px 0;
+    position: relative;
+    display: block;
+    color: #000;
+    width: 0px;
+    height: 0px;
+    border-right: 10px solid transparent;
+    border-bottom: 7px solid #000;
+    border-left: 10px solid transparent;
+    transform: rotate(35deg);
+  }
+  .star-five__Nero:before {
+    border-bottom: 8px solid #000;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -4.5px;
+    left: -6.5px;
+    display: block;
+    content: '';
+    transform: rotate(-35deg);
+  }
+  .star-five__Nero:after {
+    position: absolute;
+    display: block;
+    color: #000;
+    top: 0.3px;
+    left: -10.5px;
+    width: 0px;
+    height: 0px;
+    border-right: 10px solid transparent;
+    border-bottom: 7px solid #000;
+    border-left: 10px solid transparent;
+    transform: rotate(-70deg);
+    content: '';
+  }
+
+  /* Altimetria/Planimetria */
+  .altimetria-planimetria 
+  {
+    width: 80%; 
+    height: 100vh; 
+    text-align: center;
+    margin: 150px auto 0;
+  }
+
+  .altimetria {float: left; width: 50%; padding: 20px;}
+  .altimetria img {width: 100%; height: 100%;}
+  .planimetria {float: left; width: 50%; padding: 20px;}
+  .planimetria img {width: 100%; height: 100%;}
+@media(max-width:768px) {
+    .altimetria {float:none; width: 100%; padding: 20px;}
+    .planimetria {float:none; width: 100%; padding: 20px;}
+    .altimetria-planimetria 
+  {
+    width: 80%; 
+    height: auto; 
+    text-align: center;
+    margin: 150px auto 0;
+  }
+
+}
+  .group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Squadre */
+.tabella {margin-top: 200px;}
+.tabella td {padding: 40px;}
+.cella-diversa {width: 100%; padding: 0 7%;}
+
+.maglia {height: 80%;}
+.maglia img {width: 100%; height: 100%;}
+.paese {height: 10%; padding-bottom: 3px;}
+.squadra {height: 10%;}
+
+/* Pagina della singola squadra */
+.AG2R {margin: 200px auto 40px; width: 80%; text-align: center;}
+.AG2R__img {margin-top: 20px;}
+.AG2R__img img {width: 100%; height: 100%;}
+
+/* Foto corridori */
+#AG2R-1 {background: url('./immagini/Gallopin.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#AG2R-2 {background: url('./immagini/Bidard.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#AG2R-3 {background: url('./immagini/Bouchard.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#AG2R-4 {background: url('./immagini/Clement.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#AG2R-5 {background: url('./immagini/Gougeard.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#AG2R-6 {background: url('./immagini/Naesen.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#AG2R-7 {background: url('./immagini/Vendrame.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#AG2R-8 {background: url('./immagini/Warbasse.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Alpecin-1 {background: url('./immagini/Merlier.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Alpecin-2 {background: url('./immagini/Debondt.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Alpecin-3 {background: url('./immagini/Janssens.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Alpecin-4 {background: url('./immagini/Krieger.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Alpecin-5 {background: url('./immagini/Leysen.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Alpecin-6 {background: url('./immagini/Riesebeek.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Alpecin-7 {background: url('./immagini/Vermeersch.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Alpecin-8 {background: url('./immagini/Vervaeke.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Androni-1 {background: url('./immagini/Cepeda.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Androni-2 {background: url('./immagini/Pellaud.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Androni-3 {background: url('./immagini/Ponomar.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Androni-4 {background: url('./immagini/Ravanelli.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Androni-5 {background: url('./immagini/Sepulveda.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Androni-6 {background: url('./immagini/Tagliani.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Androni-7 {background: url('./immagini/Ocbit.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Androni-8 {background: url('./immagini/Venchiarutti.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Astana-1 {background: url('./immagini/Vlasov.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Astana-2 {background: url('./immagini/Battistella.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Astana-3 {background: url('./immagini/Felline.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Astana-4 {background: url('./immagini/Gorka.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Astana-5 {background: url('./immagini/Vadim.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Astana-6 {background: url('./immagini/Sanchez.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Astana-7 {background: url('./immagini/Sobrero.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Astana-8 {background: url('./immagini/Canacue.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Bahrain-1 {background: url('./immagini/Landa.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bahrain-2 {background: url('./immagini/Arashiro.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bahrain-3 {background: url('./immagini/Bilbao.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bahrain-4 {background: url('./immagini/Caruso.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bahrain-5 {background: url('./immagini/Mader.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bahrain-6 {background: url('./immagini/Mohoric.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bahrain-7 {background: url('./immagini/Tratnik.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bahrain-8 {background: url('./immagini/Valls.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Bardiani-1 {background: url('./immagini/Visconti.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bardiani-2 {background: url('./immagini/Battaglin.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bardiani-3 {background: url('./immagini/Carboni.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bardiani-4 {background: url('./immagini/Fiorelli.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bardiani-5 {background: url('./immagini/Gabburo.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bardiani-6 {background: url('./immagini/Marengo.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bardiani-7 {background: url('./immagini/Zana.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bardiani-8 {background: url('./immagini/Zoccarato.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Bora-1 {background: url('./immagini/Sagan.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bora-2 {background: url('./immagini/Aleotti.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bora-3 {background: url('./immagini/Benedetti.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bora-4 {background: url('./immagini/Bodnar.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bora-5 {background: url('./immagini/Buchmann.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bora-6 {background: url('./immagini/Fabbro.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bora-7 {background: url('./immagini/Felix.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Bora-8 {background: url('./immagini/Oss.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Cofidis-1 {background: url('./immagini/Viviani.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Cofidis-2 {background: url('./immagini/Behrame.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Cofidis-3 {background: url('./immagini/Consonni.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Cofidis-4 {background: url('./immagini/Edet.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Cofidis-5 {background: url('./immagini/Lafay.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Cofidis-6 {background: url('./immagini/Rochas.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Cofidis-7 {background: url('./immagini/Sabatini.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Cofidis-8 {background: url('./immagini/Attilio.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Dece-1 {background: url('./immagini/Remco.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Dece-2 {background: url('./immagini/Almeida.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Dece-3 {background: url('./immagini/Cavagna.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Dece-4 {background: url('./immagini/Honore.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Dece-5 {background: url('./immagini/Keisse.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Dece-6 {background: url('./immagini/Knox.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Dece-7 {background: url('./immagini/Masnada.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Dece-8 {background: url('./immagini/Serry.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Dece-8 {background: url('./immagini/Serry.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#EF-1 {background: url('./immagini/Carthy.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#EF-2 {background: url('./immagini/Caicedo.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#EF-3 {background: url('./immagini/Carr.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#EF-4 {background: url('./immagini/Guerreiro.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#EF-5 {background: url('./immagini/Jens.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#EF-6 {background: url('./immagini/Berg.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#EF-7 {background: url('./immagini/Bettiol.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#EF-8 {background: url('./immagini/Tejay.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Eolo-1 {background: url('./immagini/Belletti.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Eolo-2 {background: url('./immagini/Albanese.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Eolo-3 {background: url('./immagini/Christian.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Eolo-4 {background: url('./immagini/Dina.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Eolo-5 {background: url('./immagini/Fortunato.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Eolo-6 {background: url('./immagini/Gavazzi.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Eolo-7 {background: url('./immagini/Ravasi.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Eolo-8 {background: url('./immagini/Rivi.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#FDJ-1 {background: url('./immagini/Molard.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#FDJ-2 {background: url('./immagini/Badilatti.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#FDJ-3 {background: url('./immagini/Duchesne.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#FDJ-4 {background: url('./immagini/Guglielmi.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#FDJ-5 {background: url('./immagini/Reich.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#FDJ-6 {background: url('./immagini/Seigle.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#FDJ-7 {background: url('./immagini/Valter.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#FDJ-8 {background: url('./immagini/Lars.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Ineos-1 {background: url('./immagini/Bernal.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Ineos-2 {background: url('./immagini/Castro.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Ineos-3 {background: url('./immagini/Ganna.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Ineos-4 {background: url('./immagini/Martinez.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Ineos-5 {background: url('./immagini/Moscon.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Ineos-6 {background: url('./immagini/Narvaez.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Ineos-7 {background: url('./immagini/Puccio.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Ineos-8 {background: url('./immagini/Sivakov.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Wanty-1 {background: url('./immagini/Hirt.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Wanty-2 {background: url('./immagini/Hermans.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Wanty-3 {background: url('./immagini/Kreder.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Wanty-4 {background: url('./immagini/Minali.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Wanty-5 {background: url('./immagini/Pasqualon.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Wanty-6 {background: url('./immagini/Petilli.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Wanty-7 {background: url('./immagini/Rein.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Wanty-8 {background: url('./immagini/Taco.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Israel-1 {background: url('./immagini/Martin.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Israel-2 {background: url('./immagini/Bevin.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Israel-3 {background: url('./immagini/Brandle.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Israel-4 {background: url('./immagini/Cimolai.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Israel-5 {background: url('./immagini/Marchi.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Israel-6 {background: url('./immagini/Dowsett.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Israel-7 {background: url('./immagini/Neilands.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Israel-8 {background: url('./immagini/Niv.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Lotto-1 {background: url('./immagini/Caleb.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Lotto-2 {background: url('./immagini/Jasper.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Lotto-3 {background: url('./immagini/Degendt.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Lotto-4 {background: url('./immagini/Kobe.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Lotto-5 {background: url('./immagini/Kluge.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Lotto-6 {background: url('./immagini/Tomasz.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Lotto-7 {background: url('./immagini/Oldani.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Lotto-8 {background: url('./immagini/Harm.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Movi-1 {background: url('./immagini/Soler.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Movi-2 {background: url('./immagini/Cataldo.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Movi-3 {background: url('./immagini/Matteo.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Movi-4 {background: url('./immagini/Oliveira.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Movi-5 {background: url('./immagini/Pedrero.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Movi-6 {background: url('./immagini/Rubio.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Movi-7 {background: url('./immagini/Torres.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Movi-8 {background: url('./immagini/Villella.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Scott-1 {background: url('./immagini/./immagini/Yates.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Scott-2 {background: url('./immagini/./immagini/Hepburn.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Scott-3 {background: url('./immagini/./immagini/Jensen.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Scott-4 {background: url('./immagini/./immagini/Tanel.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Scott-5 {background: url('./immagini/./immagini/Meyer.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Scott-6 {background: url('./immagini/./immagini/Nieve.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Scott-7 {background: url('./immagini/./immagini/Schultz.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Scott-8 {background: url('./immagini/./immagini/Callum.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#DSM-1 {background: url('./immagini/Jai.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#DSM-2 {background: url('./immagini/Arndt.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#DSM-3 {background: url('./immagini/Bardet.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#DSM-4 {background: url('./immagini/Denz.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#DSM-5 {background: url('./immagini/Hamilton.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#DSM-6 {background: url('./immagini/Kanter.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#DSM-7 {background: url('./immagini/Roche.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#DSM-8 {background: url('./immagini/Storer.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Jumbo-1 {background: url('./immagini/Bennett.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Jumbo-2 {background: url('./immagini/Affini.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Jumbo-3 {background: url('./immagini/Koen.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Jumbo-4 {background: url('./immagini/Dekker.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Jumbo-5 {background: url('./immagini/Foss.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Jumbo-6 {background: url('./immagini/Dylan.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Jumbo-7 {background: url('./immagini/Martens.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Jumbo-8 {background: url('./immagini/Jos.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Assos-1 {background: url('./immagini/Nizzolo.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Assos-2 {background: url('./immagini/Victor.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Assos-3 {background: url('./immagini/Kilian.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Assos-4 {background: url('./immagini/Bert.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Assos-5 {background: url('./immagini/Pozzovivo.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Assos-6 {background: url('./immagini/Mauro.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Assos-7 {background: url('./immagini/Wal.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Assos-8 {background: url('./immagini/Luka.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#Trek-1 {background: url('./immagini/Nibali.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Trek-2 {background: url('./immagini/Brambilla.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Trek-3 {background: url('./immagini/Ciccone.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Trek-4 {background: url('./immagini/Kort.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Trek-5 {background: url('./immagini/Ier.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Trek-6 {background: url('./immagini/Mollema.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Trek-7 {background: url('./immagini/Mosca.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#Trek-8 {background: url('./immagini/Moschetti.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+#UAE-1 {background: url('./immagini/Formolo.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#UAE-2 {background: url('./immagini/Conti.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#UAE-3 {background: url('./immagini/Covi.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#UAE-4 {background: url('./immagini/Dombro.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#UAE-5 {background: url('./immagini/Gaviria.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#UAE-6 {background: url('./immagini/Molano.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#UAE-7 {background: url('./immagini/Richeze.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+#UAE-8 {background: url('./immagini/Ulissi.png') no-repeat center center; background-size: cover; border-radius: 100%; border: 5px solid #ff286e;}
+
+
+
+/* Tendina maglie */
+.scomparsa
+{
+    position: absolute;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.7)), url('./immagini/Quattromaglie.jpg') no-repeat center center; background-size: cover;
+    /* background: #fff; */
+    height: 0;
+    top: 0;
+    left: 0;
+    margin-right: -2000%;
+    width: 0%;
+    overflow: hidden;
+    transform: translateY(-100%);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 150px;
+}
+
+.scomparsa * {position: relative;}
+
+.scomparsa ul
+{
+    position: relative;
+}
+
+.scomparsa ul li
+{
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.scomparsa ul li a {color: #fff;}
+
+.scomparsa--open
+{
+    height: 100vh;
+    transform: translateY(0);
+    transition: .5s cubic-bezier(.215, .61, .355, 1);
+}
+
+#Rosa:hover {color: #ff286e;}
+#ciclamino:hover {color: purple;}
+#azzurro:hover {color: rgb(23, 50, 201);}
+.ciclamino{color: purple;}
+.table__ciclamino{
+    width: 80%;
+    text-align:center;
+    margin: auto;
+} 
+@media(max-width:768px){
+    .table__ciclamino{
+        width: 95%;
+        text-align:center;
+        margin: auto;
+    } 
+
+}
+.table__ciclamino h2{
+    margin: 50px ;
+    padding: 5px;
+}
+.table__ciclamino tr td{
+    width:auto;
+    text-align:left;
+    padding: 5px 0;
+}
+.azzurro {color: rgb(23, 50, 201);}
+/* Maglie */
+.margin {margin-top: 131px; padding-top: 0;}
+.margin h2 {margin: 58.1px 0;}
+.padding2{
+    padding-bottom:50px;
+}
+.margin2{
+    margin-top: 145px;
+}
+.bordo__rosa{
+    border: 5px solid #ff286e;
+    border-radius:15px ;
+    border-collapse:unset ;
+}
+.bordo__ciclamino{
+    border: 5px solid purple;
+    border-radius:15px;
+     border-collapse:unset ;
+}
+.bordo__azzurro{
+    border: 5px solid rgb(23, 50, 201);
+    border-radius:15px;
+    border-collapse:unset ;
+}
+.bordo__nero{
+    border: 5px solid black;
+    border-radius:15px;
+    border-collapse:unset ;
+}
+.bordo__azzurro td{
+padding: 10px 5px;
+}
+.bordo__rosa td{
+    padding: 10px 5px;
+}
+.bordo__ciclamino td{
+padding: 10px 5px;
+}
+.bordo__nero td{
+padding: 10px 5px;
+}
+.bordo__nero td{
+    padding: 10px 5px;
+}
+.border__color__purple{
+    border-color:purple;
+}
+.border__color__azzurro{
+    border-color:rgb(23, 50, 201);
+}
+.border__color__black{
+    border-color:black;
+}
+
+.footer__color__purple{
+   background-color:purple ;
+}
+.footer__color__azzurro{
+    background-color:rgb(23, 50, 201);
+}
+.footer__color__black{
+    background-color:black;
+ }
+ 
+.nero{
+    color:black;
+}

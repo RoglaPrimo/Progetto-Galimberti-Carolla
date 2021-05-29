@@ -10,93 +10,164 @@
     <link rel="stylesheet" href="style.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+   
+   <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
 
-<div class="header">
-    <ul class="header__menu">
-        <li><a href="">PERCORSO</a></li>
-        <li><a href="">SQUADRE</a></li>
-    </ul>
-
-    <div class="header__img">
-        <img src="logo.svg" alt="Problemi nella visualizzazione del logo">
-    </div>
-
-    <ul class="header__menu">
-        <li><a href="">LE MAGLIE</a></li>
-        <li><a href="">STORIA</a></li>
-    </ul>
-</div>
-
-
-
-
-<div class="container__Intro">
-    <h2>The toughest race in the world's most beautiful places</h2>
-    <div class="container__Intro__img__text">
-       <div class="container__Intro__text">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex illo alias, excepturi accusantium aliquam modi explicabo neque quas nisi voluptates! Eligendi eveniet unde optio placeat totam rerum alias sunt in!</p>
+    <div class="header">
+        <div class="header__img mobile">
+            <a href="index.html"><img src="./immagini/logo.svg" alt="Problemi nella visualizzazione del logo"></a>
+        </div> 
+        <ul class="header__menu">
+            <li><a  href="./pagine/percorso.html" class="decora">PERCORSO</a></li>
+            <li><a href="./pagine/squadre.html" class="decora"  >SQUADRE</a></li>
+            <li class="header__img ">
+                <a href="index.html"><img src="./immagini/logo.svg" alt="Problemi nella visualizzazione del logo"></a>
+            </li>
+            <li class="cacca"><a class="decora">LE MAGLIE</a></li>
+            <li><a href="./pagine/storia.html" class="decora">STORIA</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </div>
-    <video autoplay muted loop id="video-back">
-        <source src="production ID_5151347.mp4" type="video/mp4">
-    </video>
-</div>
-
-<div class="container__Formula">
-    <h2>jncjsdbj</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sequi error nobis at, tenetur sit fugiat doloribus cum dolores vero voluptates quos ab dicta? Unde et facere numquam in deleniti?</p>
-</div>
 
 
 
-<div class="container__Trofeo">
-    <div class="container__Trofeo__img__text">
-    <div class="container__Trofeo__img">
-        <img src="Immagine-sfondo-2.jpg" alt="ops">
+
+    <div class="container__Intro">
+        <div class="container__Intro__text reveal">
+
+            <p class="small-text"></p>
+            <h2 class="big-text">The toughest race in the world's most beautiful place</h2>
+        </div>
+        <video autoplay muted loop id="video-back">
+            <source src="./immagini/Giro_Italia.mp4" type="video/mp4">
+        </video>
+        <div class="scomparsa">
+            <ul>
+                <li> <a href="./pagina/Maglia_rosa.html" class="big-text bold" id="Rosa">Maglia rosa</a> </li>
+                <li> <a href="./pagina/Maglia_ciclamino.html" class="big-text bold" id="ciclamino">Maglia ciclamino</a> </li>
+                <li> <a href="./pagina/Maglia_azzurra.html" class="big-text bold" id="azzurro">Maglia azzurra</a> </li>
+                <li> <a href="./pagina/Maglia_bianca.html" class="big-text bold">Maglia bianca</a> </li>
+            </ul>
+        </div>
     </div>
-    <div class="container__Trofeo__text">
-        <h2>jncjsdbj</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sequi error nobis at, tenetur sit fugiat doloribus cum dolores vero voluptates quos ab dicta? Unde et facere numquam in deleniti?</p>
+
+    <div class="container__Formula">
+        <div class="container__Formula__text">
+            <h2 class=" nero big-text reveal2">Informazioni generali</h2>
+        </div>
+        <div class="container__Formula__cerchi group">
+            <div class="montagne zoom">
+
+                <p>bla bla bla</p>
+
+            </div>
+            <div class="trofeo zoom">
+                <p>bla bla </p>
+            </div>
+            <div class="venezia zoom">
+                <p>buhhhhhhhhhh</p>
+            </div>
+        </div>
     </div>
-</div>
-</div>
-
-<div class="footer">
-
-</div>
 
 
 
+    <div class="container__Trofeo group">
+        <div class="container__Trofeo__img__text ">
+            <div class="container__Trofeo__img reveal3">
+                <img src="./immagini/mappa-giro-italia-2021.jpg" alt="">
+            </div>
+            <div class="container__Trofeo__text ">
+                <h2 class=" nero big-text reveal">La formula</h2>
+                <p class="reveal3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sequi error nobis at, tenetur sit
+                    fugiat doloribus cum dolores vero voluptates quos ab dicta? Unde et facere numquam in deleniti?</p>
+                <p class="reveal3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sequi error nobis at, tenetur sit
+                    fugiat doloribus cum dolores vero voluptates quos ab dicta? Unde et facere numquam in deleniti?</p>
+                <p class="reveal3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sequi error nobis at, tenetur sit
+                    fugiat doloribus cum dolores vero voluptates quos ab dicta? Unde et facere numquam in deleniti?</p>
+              
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="grid">
+            <div class="col reveal">
+                <h4 class="normal-text">Matteo Carolla</h4>
+                <p>Double Giro d'Italia winner</p>
+            </div>
+            <div class="col reveal">
+                <h4 class="normal-text">Galimberti Andrea</h4>
+                <p class="footer__padding">1912 Giro d'Italia winner</p>
+            </div>
+           
+        </div>
+
+    </div>
+  
 
 
 
 
 
-<!-- Jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js" integrity="sha512-cA8gcgtYJ+JYqUe+j2JXl6J3jbamcMQfPe0JOmQGDescd+zqXwwgneDzniOd3k8PcO7EtTW6jA7L4Bhx03SXoA==" crossorigin="anonymous"></script>
 
-<script>
-    $( document ).ready(function() {
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-        /* Open Panel */
-        $( ".hamburger" ).on('click', function() {
-            $(".menu").toggleClass("menu--open");
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"
+        integrity="sha512-cA8gcgtYJ+JYqUe+j2JXl6J3jbamcMQfPe0JOmQGDescd+zqXwwgneDzniOd3k8PcO7EtTW6jA7L4Bhx03SXoA=="
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            /* Open Panel */
+            $(".hamburger").on('click', function () {
+                $(".header__menu").toggleClass("header__menu--open");
+            });
+
+            $(".cacca").on('click', function () {
+                $(".scomparsa").toggleClass("scomparsa--open");
+                console.log('ciao');
+            });
+
         });
 
-    });
+        ScrollReveal().reveal('.reveal', {
+             distance: '100px', 
+        duration: 1500, 
+        easing: 'cubic-bezier(.215, .61, .355, 1)', 
+        interval: 600 });
+        ScrollReveal().reveal('.reveal2', { 
+            distance: '100px', 
+        duration: 1500,
+         easing: 'cubic-bezier(.215, .61, .355, 1)',
+         origin:'left', interval: 600 });
+        ScrollReveal().reveal('.reveal3', { 
+            distance: '100px', 
+        duration: 2000,
+         easing: 'cubic-bezier(.215, .61, .355, 1)',
+        origin:'right', 
+        interval: 600 });
+        ScrollReveal().reveal('.zoom', { 
+            duration: 1500,
+             easing: 'cubic-bezier(.215, .61, .355, 1)', 
+             interval: 200, 
+             scale: 0.65,
+              mobile: false });
+        
+     
 
-    ScrollReveal().reveal('.reveal', { distance: '100px', duration: 1500, easing: 'cubic-bezier(.215, .61, .355, 1)', interval: 600 });
+    </script>
 
-    ScrollReveal().reveal('.zoom', { duration: 1500, easing: 'cubic-bezier(.215, .61, .355, 1)', interval: 200, scale: 0.65, mobile: false });
-
-</script>
-    
 </body>
 
 </html>
