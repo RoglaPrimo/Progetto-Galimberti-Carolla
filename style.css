@@ -2428,6 +2428,10 @@ table td {
     width: 80%;
     text-align: center;
     margin: auto;
+    
+}
+.table__ciclamino table{
+    display: table;
 }
 
 @media(max-width:768px) {
