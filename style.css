@@ -412,14 +412,15 @@ p {
     margin-top: 15vh;
     margin-bottom: 5vh;
     object-fit: cover;
+  
 }
 
 
-/* .container__Trofeo__img img {
-        width:100%;
+.container__Trofeo__img img {
+        width:72%;
         height:100%;
-       
-    } */
+
+    }
 
 .container__Trofeo__text {
     width: 40%;
@@ -2377,7 +2378,11 @@ table td {
     width: 100%;
     padding: 150px;
 }
-
+@media(max-width:768px){
+    .scomparsa{
+        padding:150px 50px;
+    }
+}
 .scomparsa * {
     position: relative;
 }
