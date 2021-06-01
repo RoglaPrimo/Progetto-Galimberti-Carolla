@@ -338,6 +338,8 @@ p {
 .montagne {
     background: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0.7)), url('./immagini/passo-dello-stelvio.jpg') no-repeat center center;
     background-size: cover;
+    display: flex;
+    align-items: center;
 }
 
 .montagne p {
@@ -347,6 +349,8 @@ p {
 .trofeo {
     background: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0.7)), url('./immagini/trofeo.jpg') no-repeat center center;
     background-size: cover;
+    display: flex;
+    align-items: center;
 }
 
 .trofeo p {
@@ -356,6 +360,8 @@ p {
 .venezia {
     background: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0.7)), url('./immagini/venezia.jpg') no-repeat center center;
     background-size: cover;
+    display: flex;
+    align-items: center;
 }
 
 .venezia p {
